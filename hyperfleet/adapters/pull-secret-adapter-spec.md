@@ -1,7 +1,7 @@
 # Pull Secret Adapter - Implementation Specification
 
-**Date**: October 31, 2024
-**Status**: Implementation Ready
+**Date**: Nov-04, 2025
+**Status**: In-progress
 **Cloud Provider**: GCP (MVP)
 
 ---
