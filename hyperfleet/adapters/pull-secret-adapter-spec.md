@@ -1381,6 +1381,22 @@ The Pull Secret Adapter is considered complete when:
    - **Proposed**: Make it configurable via AdapterConfig, default to "pull-secret".
 
 ---
+## Teste
+
+The adapter requires access to the following GCP Secret Manager APIs:
+
+| API Method | Purpose | Required | Reference |
+|------------|---------|----------|-----------|
+| `POST https://secretmanager.googleapis.com/v1/{parent=projects/*}/secrets` | Create new secret | Yes | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.secrets.get` | Retrieve secret metadata | Yes | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.secrets.list` | List secrets (for cleanup) | Optional | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.versions.add` | Add new secret version | Yes | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.versions.get` | Retrieve secret version | Yes | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.versions.access` | Access secret payload | No (for testing only) | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.versions.destroy` | Destroy secret version | Optional | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+| `secretmanager.secrets.delete` | Delete secret | Optional | [secrets.create](https://docs.cloud.google.com/secret-manager/docs/reference/rest/v1/projects.secrets/create) |
+
+---
 
 ## References
 
